@@ -17,7 +17,7 @@ extension WebService {
    
   public static let live = WebService (
     locationSearch: { searchTerm, googleApiKey in
-           let url = "https://maps.googleapis.com/maps/api/place/autocomplete/json?input=\(searchTerm)&components=country:UK&key=\(googleApiKey)"
+           let url = "https://maps.googleapis.com/maps/api/place/autocomplete/json?input=\(searchTerm)&components=country:IN&key=\(googleApiKey)"
            var request = URLRequest(url: URL(string: url)!)
            ////Mark: Making url request
            

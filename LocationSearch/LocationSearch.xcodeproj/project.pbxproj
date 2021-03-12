@@ -17,6 +17,7 @@
 		21CF5BCE25FBA0DA009E8AFF /* LocationSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CF5BCD25FBA0DA009E8AFF /* LocationSearchResponse.swift */; };
 		21CF5BD325FBA14B009E8AFF /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CF5BD225FBA14B009E8AFF /* WebService.swift */; };
 		21CF5BD825FBA223009E8AFF /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CF5BD725FBA223009E8AFF /* ApiError.swift */; };
+		21CF5BDD25FBAC1C009E8AFF /* LocationSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CF5BDC25FBAC1C009E8AFF /* LocationSearch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		21CF5BCD25FBA0DA009E8AFF /* LocationSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchResponse.swift; sourceTree = "<group>"; };
 		21CF5BD225FBA14B009E8AFF /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		21CF5BD725FBA223009E8AFF /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
+		21CF5BDC25FBAC1C009E8AFF /* LocationSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,14 +105,11 @@
 		21CF5B9825FB9D87009E8AFF /* LocationSearch */ = {
 			isa = PBXGroup;
 			children = (
-				21CF5B9925FB9D87009E8AFF /* LocationSearchApp.swift */,
-				21CF5B9B25FB9D87009E8AFF /* LocationSearchView.swift */,
-				21CF5BCD25FBA0DA009E8AFF /* LocationSearchResponse.swift */,
+				21CF5BE225FBAFDE009E8AFF /* LocationSearchFeature */,
+				21CF5BD725FBA223009E8AFF /* ApiError.swift */,
 				21CF5B9D25FB9D89009E8AFF /* Assets.xcassets */,
 				21CF5BA225FB9D89009E8AFF /* Info.plist */,
 				21CF5B9F25FB9D89009E8AFF /* Preview Content */,
-				21CF5BD225FBA14B009E8AFF /* WebService.swift */,
-				21CF5BD725FBA223009E8AFF /* ApiError.swift */,
 			);
 			path = LocationSearch;
 			sourceTree = "<group>";
@@ -139,6 +138,26 @@
 				21CF5BB825FB9D8A009E8AFF /* Info.plist */,
 			);
 			path = LocationSearchUITests;
+			sourceTree = "<group>";
+		};
+		21CF5BE125FBAFBE009E8AFF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				21CF5B9B25FB9D87009E8AFF /* LocationSearchView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		21CF5BE225FBAFDE009E8AFF /* LocationSearchFeature */ = {
+			isa = PBXGroup;
+			children = (
+				21CF5BDC25FBAC1C009E8AFF /* LocationSearch.swift */,
+				21CF5BD225FBA14B009E8AFF /* WebService.swift */,
+				21CF5BCD25FBA0DA009E8AFF /* LocationSearchResponse.swift */,
+				21CF5B9925FB9D87009E8AFF /* LocationSearchApp.swift */,
+				21CF5BE125FBAFBE009E8AFF /* View */,
+			);
+			path = LocationSearchFeature;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,6 +299,7 @@
 				21CF5B9A25FB9D87009E8AFF /* LocationSearchApp.swift in Sources */,
 				21CF5BD325FBA14B009E8AFF /* WebService.swift in Sources */,
 				21CF5BD825FBA223009E8AFF /* ApiError.swift in Sources */,
+				21CF5BDD25FBAC1C009E8AFF /* LocationSearch.swift in Sources */,
 				21CF5BCE25FBA0DA009E8AFF /* LocationSearchResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
