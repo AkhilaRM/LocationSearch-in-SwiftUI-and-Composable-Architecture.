@@ -6,12 +6,14 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 @main
 struct LocationSearchApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            LocationSearchView( store: Store(initialState: LocationSearch.State(), reducer: LocationSearch.reducer, environment: LocationSearch.Environment( webService: .live))
+            )
         }
     }
 }

@@ -18,8 +18,7 @@ struct LocationSearchView: View {
                 HStack {
                     Image("magnifyingGlass")
                     TextField("Search Location", text: viewStore.binding(get: { $0.searchTerm }, send: LocationSearch.Action.didtapSearchTextField))
-                        .font(.textSemibold)
-                        .foregroundColor(.brandDarkTextColor)
+                        .foregroundColor(.black)
                 }
                 .padding(textFieldPadding)
                 .background(RoundedRectangleView())
@@ -28,11 +27,9 @@ struct LocationSearchView: View {
                         ForEach(viewStore.locations, id: \.self){ address in
                             VStack(alignment: .leading) {
                                 Text(address.description)
-                                    .font(.textSemibold)
-                                    .foregroundColor(.brandDarkTextColor)
+                                    .foregroundColor(.black)
                                 Text(address.description)
-                                    .font(.textRegularSmall)
-                                    .foregroundColor(.brandLightTextColor)
+                                    .foregroundColor(.black)
                                 Divider()
                             }
                             .padding(.all, 10.0)
@@ -51,7 +48,7 @@ struct LocationSearchView: View {
 
 struct LocationSearchView_Previews: PreviewProvider {
     static var previews: some View {
-        LocationSearchView( store: Store(initialState: LocationSearch.State(), reducer: LocationSearch.reducer, environment: LocationSearch.Environment(alertController: .sclAlertView(), webService: .mockSuccess))
+        LocationSearchView( store: Store(initialState: LocationSearch.State(), reducer: LocationSearch.reducer, environment: LocationSearch.Environment( webService: .live))
         )
     }
 }
@@ -60,20 +57,19 @@ enum LocationSearch{
     struct State: Equatable{
         var searchTerm : String = ""
         var locations : [_locations] = []
-        var selectedLocation : CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: Double(0.0), longitude: Double(0.0))
+        //var selectedLocation : CLLocationCoordinate2D = CLLocationCoordinate2D(la)
         var selectedAddress = ""
         var locationSelected = false
-        var googleApikey = ""
+        var googleApikey = "AIzaSyB4fiyAw8BEs35uf2U48jEicFrRtqgD5aQ"
     }
     enum Action: Equatable {
         case doNothing
         case didtapSearchTextField(String)
-        case gotSearchLocationResponse(Result<LocationResponse, WebError>)
+        case gotSearchLocationResponse(Result<LocationResponse, ApiError>)
         case didSelectAddress(String, String)
-        case gotLatLngResponse(Result<LocationLatLngResponse, WebError>)
+        case gotLatLngResponse(Result<LocationLatLngResponse, ApiError>)
     }
     struct Environment {
-        let alertController: AlertController<Action>
         let webService: WebService
     }
     
@@ -94,10 +90,10 @@ enum LocationSearch{
                 
             case let .gotSearchLocationResponse(.success(response)):
                 state.locations = response.predictions
-                //state.locations.append(contentsOf: response.predictions)
                 return .none
                 
             case let .gotSearchLocationResponse(.failure(error)):
+                print(error)
                 return .none
             //// Mark:- google places api to fetch lat and long for selected location.
             case let .didSelectAddress(address,placeId):
@@ -112,10 +108,12 @@ enum LocationSearch{
                     .catchToEffect()
                     .map(Action.gotLatLngResponse)
                 
+                
             case let .gotLatLngResponse(.success(response)) :
-                if let location = response.results.first?.geometry.location {
-                    state.selectedLocation = CLLocationCoordinate2D(latitude: Double(location.lat), longitude: Double(location.lng))
-                }
+                print(response)
+//                if let location = response.results.first?.geometry.location {
+//                    state.selectedLocation = CLLocationCoordinate2D(latitude: Double(location.lat), longitude: Double(location.lng))
+//                }
                 return .none
                 
             case let .gotLatLngResponse(.failure(error)) :
@@ -123,4 +121,13 @@ enum LocationSearch{
             }
         }
     )
+}
+
+
+struct RoundedRectangleView: View {
+    
+    var body: some View {
+        RoundedRectangle(cornerRadius: 5.0)
+            .strokeBorder(Color.black, lineWidth: 1.0)
+    }
 }

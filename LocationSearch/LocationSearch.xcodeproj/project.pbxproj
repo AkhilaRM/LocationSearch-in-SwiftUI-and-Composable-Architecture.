@@ -3,16 +3,20 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		21CF5B9A25FB9D87009E8AFF /* LocationSearchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CF5B9925FB9D87009E8AFF /* LocationSearchApp.swift */; };
-		21CF5B9C25FB9D87009E8AFF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CF5B9B25FB9D87009E8AFF /* ContentView.swift */; };
+		21CF5B9C25FB9D87009E8AFF /* LocationSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CF5B9B25FB9D87009E8AFF /* LocationSearchView.swift */; };
 		21CF5B9E25FB9D89009E8AFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21CF5B9D25FB9D89009E8AFF /* Assets.xcassets */; };
 		21CF5BA125FB9D89009E8AFF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21CF5BA025FB9D89009E8AFF /* Preview Assets.xcassets */; };
 		21CF5BAC25FB9D8A009E8AFF /* LocationSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CF5BAB25FB9D8A009E8AFF /* LocationSearchTests.swift */; };
 		21CF5BB725FB9D8A009E8AFF /* LocationSearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CF5BB625FB9D8A009E8AFF /* LocationSearchUITests.swift */; };
+		21CF5BC925FBA055009E8AFF /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 21CF5BC825FBA055009E8AFF /* ComposableArchitecture */; };
+		21CF5BCE25FBA0DA009E8AFF /* LocationSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CF5BCD25FBA0DA009E8AFF /* LocationSearchResponse.swift */; };
+		21CF5BD325FBA14B009E8AFF /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CF5BD225FBA14B009E8AFF /* WebService.swift */; };
+		21CF5BD825FBA223009E8AFF /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CF5BD725FBA223009E8AFF /* ApiError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +39,7 @@
 /* Begin PBXFileReference section */
 		21CF5B9625FB9D87009E8AFF /* LocationSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocationSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21CF5B9925FB9D87009E8AFF /* LocationSearchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchApp.swift; sourceTree = "<group>"; };
-		21CF5B9B25FB9D87009E8AFF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		21CF5B9B25FB9D87009E8AFF /* LocationSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchView.swift; sourceTree = "<group>"; };
 		21CF5B9D25FB9D89009E8AFF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		21CF5BA025FB9D89009E8AFF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		21CF5BA225FB9D89009E8AFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -45,6 +49,9 @@
 		21CF5BB225FB9D8A009E8AFF /* LocationSearchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocationSearchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		21CF5BB625FB9D8A009E8AFF /* LocationSearchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchUITests.swift; sourceTree = "<group>"; };
 		21CF5BB825FB9D8A009E8AFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		21CF5BCD25FBA0DA009E8AFF /* LocationSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchResponse.swift; sourceTree = "<group>"; };
+		21CF5BD225FBA14B009E8AFF /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		21CF5BD725FBA223009E8AFF /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21CF5BC925FBA055009E8AFF /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,10 +104,13 @@
 			isa = PBXGroup;
 			children = (
 				21CF5B9925FB9D87009E8AFF /* LocationSearchApp.swift */,
-				21CF5B9B25FB9D87009E8AFF /* ContentView.swift */,
+				21CF5B9B25FB9D87009E8AFF /* LocationSearchView.swift */,
+				21CF5BCD25FBA0DA009E8AFF /* LocationSearchResponse.swift */,
 				21CF5B9D25FB9D89009E8AFF /* Assets.xcassets */,
 				21CF5BA225FB9D89009E8AFF /* Info.plist */,
 				21CF5B9F25FB9D89009E8AFF /* Preview Content */,
+				21CF5BD225FBA14B009E8AFF /* WebService.swift */,
+				21CF5BD725FBA223009E8AFF /* ApiError.swift */,
 			);
 			path = LocationSearch;
 			sourceTree = "<group>";
@@ -146,6 +157,9 @@
 			dependencies = (
 			);
 			name = LocationSearch;
+			packageProductDependencies = (
+				21CF5BC825FBA055009E8AFF /* ComposableArchitecture */,
+			);
 			productName = LocationSearch;
 			productReference = 21CF5B9625FB9D87009E8AFF /* LocationSearch.app */;
 			productType = "com.apple.product-type.application";
@@ -217,6 +231,9 @@
 				Base,
 			);
 			mainGroup = 21CF5B8D25FB9D87009E8AFF;
+			packageReferences = (
+				21CF5BC725FBA055009E8AFF /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			productRefGroup = 21CF5B9725FB9D87009E8AFF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -259,8 +276,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				21CF5B9C25FB9D87009E8AFF /* ContentView.swift in Sources */,
+				21CF5B9C25FB9D87009E8AFF /* LocationSearchView.swift in Sources */,
 				21CF5B9A25FB9D87009E8AFF /* LocationSearchApp.swift in Sources */,
+				21CF5BD325FBA14B009E8AFF /* WebService.swift in Sources */,
+				21CF5BD825FBA223009E8AFF /* ApiError.swift in Sources */,
+				21CF5BCE25FBA0DA009E8AFF /* LocationSearchResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -580,6 +600,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		21CF5BC725FBA055009E8AFF /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.16.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		21CF5BC825FBA055009E8AFF /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 21CF5BC725FBA055009E8AFF /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 21CF5B8E25FB9D87009E8AFF /* Project object */;
 }
